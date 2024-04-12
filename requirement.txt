@@ -1,0 +1,4 @@
+django
+django-rest-framework
+robotframework
+drf-writable-nested
