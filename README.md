@@ -63,7 +63,7 @@ Example JSON payload:
 
     Use tools like `curl` or Postman to send a POST request with the JSON payload to the API endpoint.
 
-            curl -X POST http://localhost:8000/testai/tests/v1/execute -H "Content-Type: application/json" -d '{ ... your JSON payload ... }'
+        curl -X POST http://localhost:8000/testai/tests/v1/execute -H "Content-Type: application/json" -d '{ ... your JSON payload ... }'
 
 4. Response:
 
