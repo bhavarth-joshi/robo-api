@@ -9,9 +9,18 @@ def parse_test_data(data):
   for test_case in data['tests']:
     if 'title' not in test_case or 'steps' not in test_case:
       raise ValueError('Invalid test case format')
-    test_cases.append({'title': test_case['title'], 'steps': test_case['steps']})
+    
+    # Update to handle dictionary with "description" key
+    steps = []
+    for step in test_case['steps']:
+      if 'description' not in step:
+        raise ValueError('Invalid step format: Missing "description" key')
+      steps.append(step['description'])
+    
+    test_cases.append({'title': test_case['title'], 'steps': steps})
   
   return test_cases
+
 
 def create_robot_suite(test_cases):
   robot_suite = """
